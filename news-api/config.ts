@@ -9,7 +9,7 @@ const config = {
     host: 'localhost',
     user: 'root',
     password: 'Alanze1337',
-    database: 'office',
+    database: 'cw10',
   },
 };
 

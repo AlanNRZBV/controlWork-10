@@ -1,9 +1,8 @@
 import express from 'express';
-import { categoriesRouter } from './routers/categories';
 import cors from 'cors';
 import mysqlDb from './mysqlDb';
-import { itemsRouter } from './routers/items';
-import { placesRouter } from './routers/places';
+import { postsRouter } from './routers/posts';
+import { newsRouter } from './routers/news';
 
 const app = express();
 const port = 8000;
@@ -11,9 +10,9 @@ const port = 8000;
 app.use(express.static('public'));
 app.use(express.json());
 app.use(cors());
-app.use('/categories', categoriesRouter);
-app.use('/places', placesRouter);
-app.use('/items', itemsRouter);
+app.use('/news', newsRouter);
+app.use('/posts', postsRouter);
+
 
 const run = async () => {
   await mysqlDb.init();

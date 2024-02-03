@@ -16,3 +16,14 @@ export const fetchPosts = createAsyncThunk<PostWithoutContent[] | undefined>(
     }
   }
 )
+
+export const deletePost = createAsyncThunk<void, number>(
+  'posts/delete',
+  async (arg)=>{
+    try {
+      await axiosApi.delete(`news/${arg}`)
+    }catch (e){
+      console.log(`Caught on try - DELETE POST WITH ID ${arg} - `, e)
+    }
+  }
+)

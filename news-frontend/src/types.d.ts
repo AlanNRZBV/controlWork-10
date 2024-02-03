@@ -1,9 +1,9 @@
-export interface Post {
-  id: number,
+export interface PostFromBack {
+  id: number | null,
   title: string,
   content: string,
   image: string | null,
   createdAt: string
 }
 
-export type PostWithoutContent = Omit<Post, 'content'>
+export type PostWithoutContent = Omit<PostFromBack, 'content'>

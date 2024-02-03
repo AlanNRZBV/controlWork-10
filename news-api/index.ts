@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import mysqlDb from './mysqlDb';
-import { postsRouter } from './routers/posts';
+import { commentsRouter } from './routers/comments';
 import { newsRouter } from './routers/news';
 
 const app = express();
@@ -11,7 +11,7 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(cors());
 app.use('/news', newsRouter);
-app.use('/posts', postsRouter);
+app.use('/comments', commentsRouter);
 
 
 const run = async () => {

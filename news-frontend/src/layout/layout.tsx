@@ -1,16 +1,15 @@
-import {Outlet} from "react-router-dom";
-import Navigation from "../components/Navigation/Navigation.tsx";
+import { Outlet } from 'react-router-dom';
+import Navigation from '../components/Navigation/Navigation.tsx';
 
 const Layout = () => {
   return (
     <>
       <header>
-        <Navigation/>
+        <Navigation />
       </header>
       <main>
-        <Outlet/>
+        <Outlet />
       </main>
-
     </>
   );
 };

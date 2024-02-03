@@ -7,28 +7,25 @@ import Post from '../components/Post/Post.tsx';
 
 export const router = createBrowserRouter([
   {
-    path:'/',
-    element:<Layout/>,
-    children:[
+    path: '/',
+    element: <Layout />,
+    children: [
       {
-        path:'/',
-        element:<Posts/>
+        path: '/',
+        element: <Posts />,
       },
       {
-        path:'/add-post',
-        element:<PostForm/>
+        path: '/add-post',
+        element: <PostForm />,
       },
       {
-        path:'/post/:id',
-        element:<Post/>
-
+        path: '/post/:id',
+        element: <Post />,
       },
       {
-        path:'*',
-        element:<NotFound/>
-      }
-
-    ]
+        path: '*',
+        element: <NotFound />,
+      },
+    ],
   },
-
 ]);

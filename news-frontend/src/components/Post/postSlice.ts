@@ -14,7 +14,7 @@ export const initialState: PostState = {
     title: '',
     content: '',
     image: null,
-    createdAt: '',
+    created_at: '',
   },
   isLoading: false,
 };
@@ -28,20 +28,10 @@ export const postSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(fetchPost.fulfilled, (state, { payload: post }) => {
-
-
       if (post) {
-
-        console.log('post from slice', post)
         state.post = {
           ...post[0],
-          // id: post.id,
-          // title: post.title,
-          // content: post.content,
-          // image: post.image,
-          // createdAt: post.createdAt,
         };
-        state.isLoading = false;
       }
       state.isLoading = false;
     });

@@ -7,8 +7,9 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks.ts';
 import { deletePost, fetchPosts } from './postsThunks.ts';
 import { isPostDeleting } from './postsSlice.ts';
 import { NavLink } from 'react-router-dom';
+import moment from 'moment';
 
-const PostsItem: FC<PostWithoutContent> = ({ id, title, image, createdAt }) => {
+const PostsItem: FC<PostWithoutContent> = ({ id, title, image, created_at }) => {
   const dispatch = useAppDispatch();
   const isDeleting = useAppSelector(isPostDeleting);
   const deleteHandler = async () => {
@@ -17,6 +18,8 @@ const PostsItem: FC<PostWithoutContent> = ({ id, title, image, createdAt }) => {
       dispatch(fetchPosts());
     }
   };
+
+  const date = moment(created_at).format('MMMM Do YYYY, h:mm:ss a');
 
   return (
     <Grid xs={4}>
@@ -27,7 +30,7 @@ const PostsItem: FC<PostWithoutContent> = ({ id, title, image, createdAt }) => {
             {title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {createdAt}
+            {date}
           </Typography>
         </CardContent>
         <CardActions>

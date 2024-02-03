@@ -13,7 +13,6 @@ app.use(cors());
 app.use('/news', newsRouter);
 app.use('/comments', commentsRouter);
 
-
 const run = async () => {
   await mysqlDb.init();
   app.listen(port, () => {

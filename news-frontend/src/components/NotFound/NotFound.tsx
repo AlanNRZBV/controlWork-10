@@ -1,10 +1,5 @@
-
 const NotFound = () => {
-  return (
-    <div>
-      Whoops!
-    </div>
-  );
+  return <div>Whoops!</div>;
 };
 
 export default NotFound;
